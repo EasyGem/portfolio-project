@@ -1,0 +1,101 @@
+// Base
+@import 'media'
+
+body, html
+  font-family: "Source Sans Pro"
+  font-weight: 400
+  font-size: 16px
+  min-height: 100%
+  margin: 0
+  color: #222
+  overflow-x: hidden
+  scroll-behavior: smooth
+
+div
+  box-sizing: border-box
+
+a
+  color: inherit
+  transition: .25s
+  &:not(.button):hover
+    opacity: .8
+  &:focus
+    outline: none
+
+h1
+  font-size: 4em
+  font-weight: 800
+  margin: 25px 0
+  line-height: 1
+  text-transform: uppercase
+  @include respond-to(md)
+    font-size: 3em
+h2
+  font-size: 2.5em
+  font-weight: 600
+  margin: 15px 0
+  line-height: 1
+  text-transform: uppercase
+  @include respond-to(md)
+    font-size: 2em
+h3
+  font-size: 2em
+  margin: 10px 0
+  font-weight: 400
+h5
+  font-size: 1.2em
+  margin: 10px 0
+  font-weight: 400
+
+.button
+  padding: 10px 30px
+  background-color: unset
+  border: 1px solid #fff
+  color: inherit
+  font-size: 1.1em
+  text-transform: uppercase
+  cursor: pointer
+  position: relative
+  z-index: 1
+  transition: .2s ease
+  text-decoration: none
+  display: inline-block
+  &::before
+    content: ""
+    position: absolute
+    width: 0
+    height: 100%
+    background-color: #fff
+    left: 0
+    top: 0
+    z-index: -1
+    transition: .4s ease
+  &:hover
+    color: #000
+    &::before
+      width: 100%
+  &.reverse
+    border-color: #000
+    &::before
+      background-color: #000
+    &:hover
+      color: #fff
+
+input[type="text"],
+textarea
+  box-sizing: border-box
+  border-radius: 0
+  padding: 7.5px 15px
+  background-color: unset
+  outline: none
+  border: 1px solid #bbb
+  font-size: 1.2em
+  color: #fff
+  transition: .25s
+  font-family: "Source Sans Pro"
+  &.black
+    color: #222
+    border-color: #222
+
+.ps
+  font-size: .8em
