@@ -25,7 +25,8 @@
   <div class="contact">
     <h1>Need more details?</h1>
     <h5>Or willing to discuss your project?</h5>
-    <a class="button reverse" @click="reloadHeader()">
+    <a class="button reverse"
+      @click="reloadHeader()">
         Contact me
     </a>
   </div>
