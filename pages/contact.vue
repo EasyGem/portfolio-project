@@ -147,6 +147,7 @@ export default {
     justify-content: center
     align-items: flex-start
     overflow-y: auto
+    align-items: centers
     @include respond-to(md)
       flex-wrap: wrap
     &-form-wrapper

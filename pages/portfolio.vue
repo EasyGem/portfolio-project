@@ -1,16 +1,19 @@
 <template>
 <div class="l-portfolio">
 
-  <a class="item" href="#" :style="{backgroundImage: `url(./works/p${i.id}.jpg)`}" v-for="i in works"
-  :key="i.id">
+  <a class="item" :href="i.link" 
+    :style="{backgroundImage: `url(./works/p${i.id}.jpg)`}"
+    v-for="i in works"
+    :key="i.id"
+    target="_blank">
     <div class="icons">
       <div v-if="i.tech.length > 0" class="icons-item">
         <i class="fa fa-cogs"></i>
         {{ i.tech }}
       </div>
 
-      <div class="icons-item">
-        <i v-if="i.hours.length > 0" class="fa fa-clock-o"></i>
+      <div class="icons-item" v-if="i.hours">
+        <i class="fa fa-clock-o"></i>
         {{ i.hours }} hours
       </div>
     </div>
@@ -135,6 +138,8 @@ export default {
       -webkit-transition: .5s ease
       -o-transition: .5s ease
       transition: .5s ease
+      @include respond-to(md)
+        opacity: 0.75
     .wrapper
       color: #fff
       -webkit-flex-direction: column
@@ -154,6 +159,9 @@ export default {
       transform: scale(0.75)
       overflow: hidden
       transition: .5s ease
+      @include respond-to(md)
+        opacity: 1
+        transform: unset
     h4
       font-size: 2em
       font-weight: 700
