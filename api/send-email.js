@@ -8,18 +8,20 @@ app.use(express.urlencoded({
 	extended: true
 }))
 
-const sendMail = (name, email, msg) => {
-  const transporter = nodemailer.createTransport({
-    sendmail: true,
-    newline: 'unix',
-    path: '/usr/sbin/sendmail'
-  })
-  transporter.sendMail({
-    from: email,
-    to: 'san4es-ag@ya.ru',
-    subject: 'New contact form message',
-    html: msg
-  })
+const sendMail = (name, email, message) => {
+	const transporter = nodemailer.createTransport({
+		service: 'Gmail',
+		auth: {
+			user: 'san4es021@gmail.com',
+			pass: 'gLa33e3F2iled'
+		}
+	})
+	transporter.sendMail({
+		from: 'form@alex-card.ru',
+		to: 'san4es-ag@ya.ru',
+		subject: 'Заявка с Alex-Card.ru - Freelance',
+		html: `Имя: ${name} <br> Email: ${email} <br> Сообщение: ${message}`,
+	})
 }
 
 app.post('/', (req, res) => {
@@ -27,7 +29,6 @@ app.post('/', (req, res) => {
 		return req.send(new Error('Invalid Key')).end()
 
 	sendMail(req.body.name, req.body.email, req.body.message)
-
 
 	res.end()
 })
