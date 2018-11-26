@@ -2,6 +2,9 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  serverMiddleware: [
+    '~/api/send-email'
+  ],
   head: {
     title: 'portfolio',
     meta: [

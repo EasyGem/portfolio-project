@@ -1,58 +1,59 @@
 <template>
-  <div class="l-contact" ref="lContact">
-    <div class="l-contact-form-wrapper">
-      <form class="form">
+<div class="l-contact" ref="lContact">
+  <div class="l-contact-form-wrapper">
+    <form class="form">
 
-        <div class="field-wrapper">
-          <input type="text" placeholder="Name"
-            name="name" v-model="name.value"
-            :class="{ active: name.valid}" />
-          <div class="hint">{{ name.error }}</div>
-        </div>
-
-        <div class="field-wrapper">
-          <input type="text" placeholder="Email"
-            name="email" v-model="email.value"
-            :class="{ active: email.valid}" />
-          <div class="hint">{{ email.error }}</div>
-        </div>
-
-        <div class="field-wrapper">
-          <textarea placeholder="Message"
-            name="message" v-model="message.value"
-            :class="{ active: message.valid}"></textarea>
-          <div class="hint">{{ message.error }}</div>
-        </div>
-
-        <a class="button" :class="{ active: ready }"
-          @click="sendForm()">Send</a>
-
-      </form>
-    </div>
-    <div class="l-contact-text-wrapper">
-      <h2>Get in touch <br> with me!</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <div class="contact-links">
-        <a href="mailto:san4es-ag@ya.ru" target="_blank">
-          <div class="icon"><i class="fa fa-envelope"></i></div>
-          san4es-ag@ya.ru
-        </a>
-
-        <a href="https://vk.com" target="_blank">
-          <div class="icon"><i class="fa fa-vk"></i></div>
-          @sitesmaker
-        </a>
-
-        <a href="https://instagram.com" target="_blank">
-          <div class="icon"><i class="fa fa-instagram"></i></div>
-          @kimeevalex
-        </a>
+      <div class="field-wrapper">
+        <input type="text" placeholder="Name" name="name" v-model="name.value" :class="{ active: name.valid}" />
+        <div class="hint">{{ name.error }}</div>
       </div>
+
+      <div class="field-wrapper">
+        <input type="text" placeholder="Email" name="email" v-model="email.value" :class="{ active: email.valid}" />
+        <div class="hint">{{ email.error }}</div>
+      </div>
+
+      <div class="field-wrapper">
+        <textarea placeholder="Message" name="message" v-model="message.value" :class="{ active: message.valid}"></textarea>
+        <div class="hint">{{ message.error }}</div>
+      </div>
+
+      <div class="field-wrapper right">
+        <a class="button" :class="{ active: ready }"
+          @click="sendForm()"
+          v-if="!send.status">Send</a>
+        <div class="hint" v-if="send.status">{{ send.message }}</div>
+
+      </div>
+
+
+    </form>
+  </div>
+  <div class="l-contact-text-wrapper">
+    <h2>Get in touch <br> with me!</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="contact-links">
+      <a href="mailto:san4es-ag@ya.ru" target="_blank">
+        <div class="icon"><i class="fa fa-envelope"></i></div>
+        san4es-ag@ya.ru
+      </a>
+
+      <a href="https://vk.com" target="_blank">
+        <div class="icon"><i class="fa fa-vk"></i></div>
+        @sitesmaker
+      </a>
+
+      <a href="https://instagram.com" target="_blank">
+        <div class="icon"><i class="fa fa-instagram"></i></div>
+        @kimeevalex
+      </a>
     </div>
   </div>
+</div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   layout: 'default',
   // middleware: 'serverAuth',
@@ -63,51 +64,55 @@ export default {
   },
   data() {
     return {
-        name: {
-          value: '',
-          min: 3,
-          valid: false,
-          error: '',
-        },
-        email: {
-          value: '',
-          valid: false,
-          expression: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-          error: '',
-        },
-        message: {
-          value: '',
-          min: 20,
-          valid: false,
-          error: '',
-        },
+      send: {
+        status: false,
+        message: ''
+      },
+      name: {
+        value: '',
+        min: 3,
+        valid: false,
+        error: '',
+      },
+      email: {
+        value: '',
+        valid: false,
+        expression: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+        error: '',
+      },
+      message: {
+        value: '',
+        min: 20,
+        valid: false,
+        error: '',
+      },
     }
   },
   watch: {
     'name.value': function(newVal, oldVal) {
       this.name.error = (newVal.length < this.name.min) ?
-      `Must be ${this.name.min} charachters at least.` : ''
+        `Must be ${this.name.min} charachters at least.` : ''
 
-        this.name.valid = (this.name.error.length === 0)
+      this.name.valid = (this.name.error.length === 0)
     },
 
     'email.value': function(newVal, oldVal) {
       this.email.error = !(this.email.expression.test(newVal)) ?
-      `Invalid email.` : ''
+        `Invalid email.` : ''
 
       this.email.valid = (this.email.error.length === 0)
     },
 
     'message.value': function(newVal, oldVal) {
       this.message.error = (newVal.length < this.message.min) ?
-      `Must be ${this.message.min} charachters at least.` : ''
+        `Must be ${this.message.min} charachters at least.` : ''
 
-        this.message.valid = (this.message.error.length === 0)
+      this.message.valid = (this.message.error.length === 0)
     }
   },
   computed: {
     ready() {
-      if(this.name.valid && this.email.valid && this.message.valid)
+      if (this.name.valid && this.email.valid && this.message.valid)
         return true
 
       return false
@@ -115,10 +120,24 @@ export default {
   },
   methods: {
     sendForm() {
-      if(!this.ready)
+      if (!this.ready)
         return false
 
-      console.log('Sending Form...');
+      axios
+        .post('../send-email', {
+          key: 'g1hXzgy2SOeWX2nSzQ8Z',
+          name: this.name.value,
+          email: this.email.value,
+          message: this.message.value
+        })
+        .then(res => {
+          this.send.message = 'The message has been successfully sent.'
+          this.send.status = true
+        })
+        .catch(err => {
+          this.send.message = 'An error occured. Сontact me by email: san4es-ag@ya.ru'
+          this.send.status = true
+        })
     }
   },
   components: {
@@ -179,6 +198,9 @@ export default {
             pointer-events: all
         .field-wrapper
           width: 100%
+          &.right
+            align-self: flex-end
+            text-align: right
           .hint
             color: #888
             font-weight: 300
