@@ -1,23 +1,34 @@
 import express from 'express'
-import sendmail from 'sendmail'
+import nodemailer from 'nodemailer'
 
 const app = express()
 
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({
+	extended: true
+}))
+
+const sendMail = (name, email, msg) => {
+  const transporter = nodemailer.createTransport({
+    sendmail: true,
+    newline: 'unix',
+    path: '/usr/sbin/sendmail'
+  })
+  transporter.sendMail({
+    from: email,
+    to: 'san4es-ag@ya.ru',
+    subject: 'New contact form message',
+    html: msg
+  })
+}
 
 app.post('/', (req, res) => {
-  if(!(req && req.body.key == 'g1hXzgy2SOeWX2nSzQ8Z'))
-    return req.send(new Error('Invalid Key')).end()
+	if (!(req && req.body.key == 'g1hXzgy2SOeWX2nSzQ8Z'))
+		return req.send(new Error('Invalid Key')).end()
 
-  sendmail()({
-		from: 'form@alex-card.ru',
-		to: 'san4es-ag@ya.ru',
-		subject: 'Заявка с Alex-Card.ru - Freelance',
-		html: `Имя: ${req.body.name} <br> Email: ${req.body.email} <br> Сообщение: ${req.body.message}`,
-	}, function(err, reply) {
-		console.log(err && err.stack);
-	});
+	sendMail(req.body.name, req.body.email, req.body.message)
+
+
 	res.end()
 })
 
