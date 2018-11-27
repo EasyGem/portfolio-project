@@ -10,10 +10,11 @@ app.use(express.urlencoded({
 
 const sendMail = (name, email, message) => {
 	const transporter = nodemailer.createTransport({
-		service: 'Gmail',
+		host: 'smtp.ethereal.email',
+		port: 587,
 		auth: {
-			user: 'san4es021@gmail.com',
-			pass: 'gLa33e3F2iled'
+			user: 'l6kpmuvfktzh62jr@ethereal.email',
+			pass: 'NphzK8cpr7MGN73Czb'
 		}
 	})
 	transporter.sendMail({
@@ -21,7 +22,13 @@ const sendMail = (name, email, message) => {
 		to: 'san4es-ag@ya.ru',
 		subject: 'Заявка с Alex-Card.ru - Freelance',
 		html: `Имя: ${name} <br> Email: ${email} <br> Сообщение: ${message}`,
-	})
+	}, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    })
 }
 
 app.post('/', (req, res) => {
