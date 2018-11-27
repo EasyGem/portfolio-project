@@ -10,13 +10,20 @@ app.use(express.urlencoded({
 
 const sendMail = (name, email, message) => {
 	var transporter = nodemailer.createTransport({
-		host: 'smtp.yandex.ru',
-		port: 465,
-		secure: true,
+		host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
 		auth: {
-			user: 'YTAcademy@yandex.ru',
-			pass: 'agusev_pass_yta'
+			user: 'san4es021@gmail.com',
+			pass: 'gLa33e3F2iled'
 		}
+		// host: 'smtp.yandex.ru',
+		// port: 465,
+		// secure: true,
+		// auth: {
+		// 	user: 'YTAcademy@yandex.ru',
+		// 	pass: 'agusev_pass_yta'
+		// }
 	})
 	transporter.sendMail({
 		from: 'ytacademy@ya.ru',
@@ -24,11 +31,11 @@ const sendMail = (name, email, message) => {
 		subject: 'Заявка с Alex-Card.ru - Freelance',
 		html: `Имя: ${name} <br> Email: ${email} <br> Сообщение: ${message}`,
 	}, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log(info);
-    })
+		if (error) {
+			return console.log(error);
+		}
+		console.log(info);
+	})
 }
 
 app.post('/', (req, res) => {
