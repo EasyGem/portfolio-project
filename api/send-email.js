@@ -10,7 +10,9 @@ app.use(express.urlencoded({
 
 const sendMail = (name, email, message) => {
 	var transporter = nodemailer.createTransport({
-		service: 'Yandex',
+		host: 'smtp.yandex.ru',
+		port: 465,
+		secure: true,
 		auth: {
 			user: 'YTAcademy@yandex.ru',
 			pass: 'agusev_pass_yta'
