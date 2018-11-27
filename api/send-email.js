@@ -15,20 +15,19 @@ const sendMail = (name, email, message) => {
 		// 	user: 'san4es021@gmail.com',
 		// 	pass: 'gLa33e3F2iled'
 		// }
-		// host: 'smtp.gmail.com',
-    // port: 465,
-    // secure: true,
-		// auth: {
-		// 	user: 'san4es021@gmail.com',
-		// 	pass: 'gLa33e3F2iled'
-		// }
-		host: 'smtp.yandex.ru',
-		port: 465,
-		secure: true,
+		host: 'smtp.gmail.com',
+    port: 587,
 		auth: {
-			user: 'YTAcademy@yandex.ru',
-			pass: 'agusev_pass_yta'
+			user: 'san4es021@gmail.com',
+			pass: 'gLa33e3F2iled'
 		}
+		// host: 'smtp.yandex.ru',
+		// port: 465,
+		// secure: true,
+		// auth: {
+		// 	user: 'YTAcademy@yandex.ru',
+		// 	pass: 'agusev_pass_yta'
+		// }
 	})
 	transporter.sendMail({
 		from: 'ytacademy@ya.ru',
