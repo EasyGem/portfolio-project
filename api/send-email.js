@@ -9,16 +9,15 @@ app.use(express.urlencoded({
 }))
 
 const sendMail = (name, email, message) => {
-	const transporter = nodemailer.createTransport({
-		host: 'smtp.ethereal.email',
-		port: 587,
+	var transporter = nodemailer.createTransport({
+		service: 'Yandex',
 		auth: {
-			user: 'l6kpmuvfktzh62jr@ethereal.email',
-			pass: 'NphzK8cpr7MGN73Czb'
+			user: 'YTAcademy@yandex.ru',
+			pass: 'agusev_pass_yta'
 		}
 	})
 	transporter.sendMail({
-		from: 'form@alex-card.ru',
+		from: 'ytacademy@ya.ru',
 		to: 'san4es-ag@ya.ru',
 		subject: 'Заявка с Alex-Card.ru - Freelance',
 		html: `Имя: ${name} <br> Email: ${email} <br> Сообщение: ${message}`,
@@ -26,8 +25,7 @@ const sendMail = (name, email, message) => {
         if (error) {
             return console.log(error);
         }
-        console.log('Message sent: %s', info.messageId);
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        console.log(info);
     })
 }
 
