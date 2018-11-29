@@ -1,7 +1,7 @@
 <template>
 <div class="l-portfolio">
 
-  <a class="item" :href="i.link" 
+  <a class="item" :href="i.link"
     :style="{backgroundImage: `url(./works/p${i.id}.jpg)`}"
     v-for="i in works"
     :key="i.id"
@@ -50,8 +50,7 @@ export default {
   async asyncData() {
     return db.ref('/works/').once('value').then(function(snapshot) {
     let works = snapshot.val()
-    //works = works.filter(function(n){ return n != undefined })
-    console.log(works)
+    works = works.filter(function(n){ return n.id != undefined })
       return {
         works: works
       }
@@ -89,14 +88,14 @@ export default {
   -ms-align-items: stretch
   align-items: stretch
   .item
-    border: 5px solid #fff
+    border: none
     position: relative
     box-sizing: border-box
     text-decoration: none
     -webkit-background-size: cover
     background-size: cover
     background-position: center top
-    transition: 1s ease
+    transition: 2s ease
     &:hover
       opacity: 1
       background-position: center bottom
@@ -106,26 +105,26 @@ export default {
       &::before
         opacity: .75
     &:nth-child(1n)
-      flex: 33.3333% 1 0
+      flex: 33.3333% 0 0
     &:nth-child(2n)
-      flex: 33.3333% 1 0
+      flex: 33.3333% 0 0
     &:nth-child(3n)
-      flex: 33.3333% 1 0
+      flex: 33.3333% 0 0
     &:nth-child(4n)
-      flex: 50% 1 0
+      flex: 50% 0 0
     &:nth-child(5n)
-      flex: 50% 1 0
+      flex: 50% 0 0
     @include respond-to(lg)
       &:nth-child(1n)
-        flex: 50% 1 0
+        flex: 50% 0 0
       &:nth-child(2n)
-        flex: 50% 1 0
+        flex: 50% 0 0
       &:nth-child(3n)
-        flex: 50% 1 0
+        flex: 50% 0 0
       &:nth-child(4n)
-        flex: 50% 1 0
+        flex: 50% 0 0
       &:nth-child(5n)
-        flex: 50% 1 0
+        flex: 50% 0 0
     @include respond-to(sm)
       &:nth-child(n)
         flex: 100% 1 1
