@@ -49,6 +49,7 @@ export default {
   },
   async asyncData() {
     return db.ref('/works/').once('value').then(function(snapshot) {
+    console.log(snapshot.val())
       return {
         works: snapshot.val()
       }
