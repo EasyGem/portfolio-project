@@ -49,7 +49,8 @@ export default {
   },
   async asyncData() {
     return db.ref('/works/').once('value').then(function(snapshot) {
-    let works = snapshot.val().filter(function(n){ return n != undefined });
+    let works = snapshot.val()
+    works = works.filter(function(n){ return n != undefined })
     console.log(works)
       return {
         works: works
