@@ -111,7 +111,7 @@ export default {
       this.sectionMode = true
 
       if (id === 0) {
-        this.floatingImg = 'techs.jpg'
+        this.floatingImg = 'techs.png'
         anime({
           targets: '.greetings',
           duration: 0,
@@ -284,7 +284,7 @@ export default {
       })
 
       if (id === 0) {
-        this.floatingImg = 'techs.jpg'
+        this.floatingImg = 'techs.png'
         changeTheme.add({
           targets: '.l-header',
           duration: 0,
