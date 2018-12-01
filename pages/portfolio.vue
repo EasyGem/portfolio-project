@@ -1,11 +1,7 @@
 <template>
 <div class="l-portfolio">
 
-  <a class="item" :href="i.link"
-    :style="{backgroundImage: `url(./works/p${i.id}.jpg)`}"
-    v-for="i in works"
-    :key="i.id"
-    target="_blank">
+  <a class="item" :href="i.link" :style="{backgroundImage: `url(./works/p${i.id}.jpg)`}" v-for="i in works" :key="i.id" target="_blank">
     <div class="icons">
       <div v-if="i.tech.length > 0" class="icons-item">
         <i class="fa fa-cogs"></i>
@@ -28,9 +24,8 @@
   <div class="contact">
     <h1>Need more details?</h1>
     <h5>Or willing to discuss your project?</h5>
-    <a class="button reverse"
-      @click="reloadHeader()">
-        Contact me
+    <a class="button reverse" @click="reloadHeader()">
+      Contact me
     </a>
   </div>
 
@@ -38,7 +33,9 @@
 </template>
 
 <script>
-import {db} from '~/plugins/firebase'
+import {
+  db
+} from '~/plugins/firebase'
 
 export default {
   layout: 'default',
@@ -48,9 +45,11 @@ export default {
     }
   },
   async asyncData() {
-    return db.ref('/works/').once('value').then(function(snapshot) {
-    let works = snapshot.val()
-    works = works.filter(function(n){ return n.id != undefined })
+    return db.ref('/works/').limitToFirst(10).once('value').then(function(snapshot) {
+      let works = snapshot.val()
+
+      works = works.filter(function(n){ return n.id != undefined })
+
       return {
         works: works
       }
@@ -104,26 +103,26 @@ export default {
         transform: unset
       &::before
         opacity: .75
-    &:nth-child(1n)
+    &:nth-child(5n+1)
       flex: 33.3333% 0 0
-    &:nth-child(2n)
+    &:nth-child(5n+2)
       flex: 33.3333% 0 0
-    &:nth-child(3n)
+    &:nth-child(5n+3)
       flex: 33.3333% 0 0
-    &:nth-child(4n)
+    &:nth-child(5n+4)
       flex: 50% 0 0
-    &:nth-child(5n)
+    &:nth-child(5n+5)
       flex: 50% 0 0
     @include respond-to(lg)
-      &:nth-child(1n)
+      &:nth-child(5n+1)
         flex: 50% 0 0
-      &:nth-child(2n)
+      &:nth-child(5n+2)
         flex: 50% 0 0
-      &:nth-child(3n)
+      &:nth-child(5n+3)
         flex: 50% 0 0
-      &:nth-child(4n)
+      &:nth-child(5n+4)
         flex: 50% 0 0
-      &:nth-child(5n)
+      &:nth-child(5n+5)
         flex: 50% 0 0
     @include respond-to(sm)
       &:nth-child(n)
