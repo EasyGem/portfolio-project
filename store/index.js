@@ -12,7 +12,7 @@ const mainStore = () => {
 			sections: [{
 				id: 0,
 				title: 'About me',
-				desc: 'NOT 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+				desc: 'My name is Alexander Kimaev and I am a front-end developer. My primary type of employment is freelance. Below you can learn about the technologies and skills I have, as well as what types of projects I can implement.',
 				headerButton: 'My skills',
 				colors: {
 					bg: '#000',
@@ -23,7 +23,7 @@ const mainStore = () => {
       {
         id: 1,
         title: 'Portfolio',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        desc: "Here are the projects I've finished. Some of them I've made as an example of how the project can look like (for example, Vue.js Single Page Application). You also can click on the project and see how it works in a browser.",
         headerButton: 'See projects',
         colors: {
           bg: '#fff',
@@ -34,8 +34,8 @@ const mainStore = () => {
       {
         id: 2,
         title: 'Reviews',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        headerButton: 'My skills',
+        desc: '',
+        headerButton: '',
         colors: {
           bg: '#fff',
           text: '#000'
@@ -45,8 +45,8 @@ const mainStore = () => {
       {
         id: 3,
         title: 'Contact',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        headerButton: 'My skills',
+        desc: '',
+        headerButton: '',
         colors: {
           bg: '#000',
           text: '#fff'

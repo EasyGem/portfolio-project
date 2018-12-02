@@ -13,13 +13,13 @@ const sendMail = (name, email, message) => {
 		host: 'smtp.yandex.ru',
 		port: 587,
 		auth: {
-			user: 'YTAcademy@yandex.ru',
-			pass: 'agusev_pass_yta'
+			user: 'the.alex.dev@ya.ru',
+			pass: 's3IyASZAlgXBV5Y5GyZB'
 		}
 	})
 	transporter.sendMail({
-		from: 'ytacademy@ya.ru',
-		to: 'san4es-ag@ya.ru',
+		from: 'the.alex.dev@ya.ru',
+		to: 'the.alex.dev@ya.ru',
 		subject: 'Заявка с Alex-Card.ru - Freelance',
 		html: `Имя: ${name} <br> Email: ${email} <br> Сообщение: ${message}`,
 	}, (error, info) => {

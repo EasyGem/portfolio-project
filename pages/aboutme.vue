@@ -14,7 +14,7 @@
       <h3>Frontend Development:</h3>
       <ul class="skills-list">
         <li>JavaScript</li>
-        <li>JQuery</li>
+        <li>jQuery</li>
         <li>AJAX</li>
         <li>Vue.js</li>
         <li>Nuxt.js</li>
@@ -34,8 +34,10 @@
 
     <div class="description">
       <h1>What is my specialization?</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, ducimus necessitatibus excepturi maiores libero odit quidem sunt, ad doloremque aut delectus totam, dolorum laudantium sit labore debitis <b>explicabo</b> optio repellat animi
-        reprehenderit sint molestiae. Iusto facere repudiandae accusantium perspiciatis fugit voluptate porro voluptas. Doloremque exercitationem veniam omnis qui odio nesciunt!</p>
+      <p>As I've already mentioned, my main specialization is <b>front-end web development</b>. This means that using HTML, CSS, JavaScript and other technologies, I <b>convert data to a graphical interface</b> for users so they could conveniently
+        interact with it. Usually, input data here is a site design, and the result - a website ready to be used by people.</p>
+      <p>Some of the technologies I use are aimed at <b>accelerating development</b>, while others are aimed at <b>improving the user experience</b>. For example, <b>SASS</b> allows me to save time on writing styles for a page, while the <b>Vue.js</b>
+        makes it possible to create moder <b>Single Page Applocations</b>.</p>
       <p><i class="ps"><b>*Backend Basics</b> - Languages and technologies that I am familiar with just to have a general understanding of what happens on Backend or to code small pieces of code using it (not to develop whole apps).</i></p>
     </div>
   </div>
@@ -46,29 +48,30 @@
     <div class="types-wrapper">
       <div class="item">
         <img src="@/assets/logo.png">
-        <h3>VueJS Project</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non molestiae porro enim, in error assumenda perferendis quod laudantium, eius reiciendis.</p>
+        <h3>Vue.js App</h3>
+        <p>Vue.js allows to create modern Single Page Applications - sites, that do not require reloading the page and can get data on the go. If you want to create a multi-page site, this is what you need.</p>
       </div>
       <div class="item">
         <img src="@/assets/logo.png">
-        <h3>VueJS Project</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ipsa quibusdam labore recusandae minima, accusamus quos dicta cum perferendis voluptatibus!</p>
+        <h3>Nuxt.js App</h3>
+        <p>Nuxt.js is another modern technology, based on Vue.js. However, it has an important feature - server side rendering. That gives an opportunity to build
+          the page on the server and send it to the user, as well as work with cookies, databases, sessions an many other. <br><i>Usually, I use <a href="https://firebase.google.com" target="_blank">Firebase</a> in my projects (also in Vue.js apps).</i></p>
       </div>
       <div class="item">
         <img src="@/assets/logo.png">
-        <h3>VueJS Project</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni expedita accusamus recusandae labore odio, asperiores debitis illum harum voluptatibus temporibus.</p>
+        <h3>Page layout</h3>
+        <p>Modern responsive cross-browser layout from the design (usually PSD). Here I use not only HTML, CSS and JavaScript, but also Bootstrap, SASS (to speed up the development) and jQuery (to make elements on the page more dynamic).</p>
       </div>
     </div>
 
     <br>
-    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, ex.</h5>
+    <h5>This is only a general information. You can specify the features of your project by contacting me.</h5>
   </div>
   <div class="contact">
     <h1>Need more details?</h1>
     <h5>Or willing to discuss your project?</h5>
     <a class="button reverse" @click="reloadHeader()">
-        Contact me
+      Contact me
     </a>
   </div>
 </div>

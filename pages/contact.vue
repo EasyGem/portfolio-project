@@ -31,11 +31,12 @@
   </div>
   <div class="l-contact-text-wrapper">
     <h2>Get in touch <br> with me!</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>If you have any questions or you want to discuss the terms of your project development, use this form to contact me. Remember to enter your email address correctly as it is the only way for me to answer you. <br>
+    Also, you can use the following information to get in touch with me directly:</p>
     <div class="contact-links">
-      <a href="mailto:san4es-ag@ya.ru" target="_blank">
+      <a href="mailto:the.alex.dev@ya.ru" target="_blank">
         <div class="icon"><i class="fa fa-envelope"></i></div>
-        san4es-ag@ya.ru
+        the.alex.dev@ya.ru
       </a>
 
       <a href="https://vk.com" target="_blank">
