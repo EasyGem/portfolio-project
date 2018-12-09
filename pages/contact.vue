@@ -38,12 +38,12 @@
         the.alex.dev@ya.ru
       </a>
 
-      <a href="https://vk.com" target="_blank">
+      <a href="https://vk.com/sitesmaker" target="_blank">
         <div class="icon"><i class="fa fa-vk"></i></div>
         @sitesmaker
       </a>
 
-      <a href="https://instagram.com" target="_blank">
+      <a href="https://www.instagram.com/kimeevalex/" target="_blank">
         <div class="icon"><i class="fa fa-instagram"></i></div>
         @kimeevalex
       </a>
