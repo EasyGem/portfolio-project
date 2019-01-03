@@ -1,9 +1,6 @@
 <template>
   <div>
-    dasdasd <br>
-    bfd <br>
-    fgdf g <br>
-    sdfsdf
+
   </div>
 </template>
 
@@ -11,6 +8,7 @@
 
 export default {
   layout: 'default',
+  middleware: 'serverAuth',
   head() {
     return {
       title: 'Reviews'

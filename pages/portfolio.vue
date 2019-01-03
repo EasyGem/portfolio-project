@@ -45,7 +45,7 @@ export default {
     }
   },
   async asyncData() {
-    return db.ref('/works/').limitToFirst(10).once('value').then(function(snapshot) {
+    return db.ref('/works/').limitToFirst(16).once('value').then(function(snapshot) {
       let works = snapshot.val()
 
       works = works.filter(function(n){ return n.id != undefined })

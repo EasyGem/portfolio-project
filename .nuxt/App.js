@@ -1,17 +1,17 @@
 import Vue from 'vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '../assets/sass/main.sass'
+import '..\\assets\\sass\\main.sass'
 
 
-import _6f6c098b from '../layouts/default.vue'
+import _6f6c098b from '..\\layouts\\default.vue'
 
 const layouts = { "_default": _6f6c098b }
 
 
 
 export default {
-  head: {"title":"portfolio","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"script":[{"src":"anime.min.js"}],"style":[]},
+  head: {"title":"portfolio","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.png"}],"script":[{"src":"anime.min.js"}],"style":[]},
   render(h, props) {
     const loadingEl = h('nuxt-loading', { ref: 'loading' })
     const layoutEl = h(this.layout || 'nuxt')

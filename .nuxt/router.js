@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const _367c34a2 = () => import('../pages/reviews.vue' /* webpackChunkName: "pages/reviews" */).then(m => m.default || m)
-const _05e7030e = () => import('../pages/aboutme.vue' /* webpackChunkName: "pages/aboutme" */).then(m => m.default || m)
-const _d5d0e998 = () => import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */).then(m => m.default || m)
-const _c30d2d48 = () => import('../pages/portfolio.vue' /* webpackChunkName: "pages/portfolio" */).then(m => m.default || m)
-const _79a4d5e6 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _d448e424 = () => import('..\\pages\\reviews.vue' /* webpackChunkName: "pages_reviews" */).then(m => m.default || m)
+const _a3b3b290 = () => import('..\\pages\\aboutme.vue' /* webpackChunkName: "pages_aboutme" */).then(m => m.default || m)
+const _46313373 = () => import('..\\pages\\contact.vue' /* webpackChunkName: "pages_contact" */).then(m => m.default || m)
+const _6fc9fddb = () => import('..\\pages\\portfolio.vue' /* webpackChunkName: "pages_portfolio" */).then(m => m.default || m)
+const _858cfc36 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
 Vue.use(Router)
 
@@ -68,27 +68,27 @@ export function createRouter () {
     routes: [
 		{
 			path: "/reviews",
-			component: _367c34a2,
+			component: _d448e424,
 			name: "reviews"
 		},
 		{
 			path: "/aboutme",
-			component: _05e7030e,
+			component: _a3b3b290,
 			name: "aboutme"
 		},
 		{
 			path: "/contact",
-			component: _d5d0e998,
+			component: _46313373,
 			name: "contact"
 		},
 		{
 			path: "/portfolio",
-			component: _c30d2d48,
+			component: _6fc9fddb,
 			name: "portfolio"
 		},
 		{
 			path: "/",
-			component: _79a4d5e6,
+			component: _858cfc36,
 			name: "index"
 		}
     ],
